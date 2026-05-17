@@ -1,0 +1,16 @@
+# Netlify build config — auto-detected when you connect this repo.
+# With this file you do NOT have to type build settings in the Netlify UI.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Single-page-app routing: every path serves index.html so hash/deep links work.
+# (public/_redirects also covers this; this is a belt-and-suspenders fallback.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
